@@ -4430,3 +4430,22 @@ WHERE fk.referenced_column_name is not null
   [1m[35mReview Load (0.3ms)[0m  SELECT  `reviews`.* FROM `reviews`  ORDER BY `reviews`.`id` ASC LIMIT 1
   [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 532 LIMIT 1[0m
   [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 532
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) AS count_all, product_id AS product_id FROM `products` GROUP BY `product_id`[0m
+  [1m[35m (5.6ms)[0m  SELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY product_id DECS[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY product_id DESC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY conut_product_id DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY conut_product_id DESC
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY conut_product_id DESC[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY conut_product_id DESC
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (6.0ms)[0m  SELECT `products`.* FROM `products` WHERE `products`.`id` IN (532, 633, 777)
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT `products`.* FROM `products` WHERE `products`.`id` IN (633, 777, 532)[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT `products`.* FROM `products` WHERE `products`.`id` IN (633, 777, 532)
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT `products`.* FROM `products` WHERE `products`.`id` IN (633, 777, 532)[0m
