@@ -18,6 +18,14 @@
               <li class="logo" style="float: left">
                 <a href="/">mooovi</a>
               </li>
+              <% if user_signed_in? %>
+              <li class="entry_button" style="float: right">
+                <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+              </li>
+              <li class="entry_button" style="float: right">
+                <%= link_to "マイページ", user_path, method: :get %>
+              </li>
+              <% end %>
               <li class="entry_button" style="float: right">
                 <a href="/products/search">投稿する</a>
               </li>
@@ -35,7 +43,7 @@
 
               <% @ranking.each.with_index(1) do |product, i| %>
               <li date-cinema-id= "346394">
-                <a href="?products/<%= product.id %>">
+                <a href="/products/<%= product.id %>">
                   <div class="box">
                     <div class="box__cell w40 align-center">
                       <p clasa="label bgcolor-gray-lighter align-center" >
